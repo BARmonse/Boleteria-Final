@@ -1,4 +1,4 @@
-﻿using Boleteria_Final.Soporte;
+﻿﻿using Boleteria_Final.Soporte;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -52,8 +52,8 @@ namespace Boleteria_Final
             {
                 lineaActual = new Linea(lineaAnterior, this, desde, hasta);
                 lineaActual.calcularEvento();
-                lineaActual.calcularSiguienteLlegada();
-                lineaActual.calcularFinAtencion();
+                lineaActual.calcularSiguienteLlegada(limInferior,limSuperior);
+                lineaActual.calcularFinAtencion(media1,desviacion1,media2,desviacion2);
 
                 lineaActual.calcularColaMaxima();
 

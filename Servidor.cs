@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +8,8 @@ namespace Boleteria_Final
 {
     internal class Servidor
     {
-        string LIBRE = "LIBRE";
-        string OCUPADO = "OCUPADO";
+        String LIBRE = "LIBRE";
+        String OCUPADO = "OCUPADO";
         public string estado { get; set; }
         public double finAtencion { get; set; }
         public Queue<Cliente> cola;
@@ -59,6 +59,9 @@ namespace Boleteria_Final
         public void agregarACola(Cliente cliente)
         {
             cola.Enqueue(cliente);
+        }
+        public void obtenerClienteActual(){
+            return this.clienteActual;
         }
     }
 }
