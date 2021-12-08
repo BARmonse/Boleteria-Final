@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Boleteria_Final
 {
-    internal class Servidor
+    internal class Servidor : ICloneable
     {
         String LIBRE = "LIBRE";
         String OCUPADO = "OCUPADO";
@@ -62,6 +62,18 @@ namespace Boleteria_Final
         }
         public Cliente obtenerClienteActual(){
             return this.clienteActual;
+        }
+        public object Clone()
+        {
+            Servidor res = new Servidor();
+            res.estado = this.estado;
+            res.finAtencion = this.finAtencion;
+            res.clienteActual = this.clienteActual;
+            Cliente[] temp = new Cliente[cola.Count];
+            cola.CopyTo(temp, 0);
+            res.cola = new Queue<Cliente>(temp);
+
+            return res;
         }
     }
 }

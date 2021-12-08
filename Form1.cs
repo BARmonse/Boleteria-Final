@@ -63,7 +63,7 @@ namespace Boleteria_Final
             {
   
                 gestorColas = new GestorColas(this);
-                gestorColas.simular(desde,hasta,limInferior,limSuperior,media1,media2,desviacion1,desviacion2);
+                gestorColas.simular(desde,hasta,limInferior,limSuperior,media1,media2,desviacion1,desviacion2,tiempo,cantidadClientes,simulacionClientes);
             }
         }
 

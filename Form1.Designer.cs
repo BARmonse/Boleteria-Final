@@ -255,7 +255,7 @@
             this.txtCantidadClientes.Name = "txtCantidadClientes";
             this.txtCantidadClientes.Size = new System.Drawing.Size(125, 26);
             this.txtCantidadClientes.TabIndex = 21;
-            this.txtCantidadClientes.Text = "120";
+            this.txtCantidadClientes.Text = "2500";
             // 
             // lblClientes
             // 
@@ -274,7 +274,7 @@
             this.txtTiempo.Name = "txtTiempo";
             this.txtTiempo.Size = new System.Drawing.Size(125, 26);
             this.txtTiempo.TabIndex = 23;
-            this.txtTiempo.Text = "1000";
+            this.txtTiempo.Text = "100000";
             // 
             // lblTiempo
             // 
