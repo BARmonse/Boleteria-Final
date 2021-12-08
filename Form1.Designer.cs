@@ -49,9 +49,9 @@
             this.combo = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtCantidadClientes = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblClientes = new System.Windows.Forms.Label();
+            this.txtTiempo = new System.Windows.Forms.TextBox();
+            this.lblTiempo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdResultados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -236,6 +236,7 @@
             this.combo.Name = "combo";
             this.combo.Size = new System.Drawing.Size(203, 21);
             this.combo.TabIndex = 18;
+            this.combo.SelectedValueChanged += new System.EventHandler(this.combo_SelectedValueChanged);
             // 
             // label9
             // 
@@ -256,44 +257,44 @@
             this.txtCantidadClientes.TabIndex = 21;
             this.txtCantidadClientes.Text = "120";
             // 
-            // label10
+            // lblClientes
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(236, 133);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 20);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Clientes:";
+            this.lblClientes.AutoSize = true;
+            this.lblClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClientes.Location = new System.Drawing.Point(236, 133);
+            this.lblClientes.Name = "lblClientes";
+            this.lblClientes.Size = new System.Drawing.Size(79, 20);
+            this.lblClientes.TabIndex = 20;
+            this.lblClientes.Text = "Clientes:";
             // 
-            // textBox1
+            // txtTiempo
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(541, 130);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 26);
-            this.textBox1.TabIndex = 23;
-            this.textBox1.Text = "1000";
+            this.txtTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTiempo.Location = new System.Drawing.Point(541, 130);
+            this.txtTiempo.Name = "txtTiempo";
+            this.txtTiempo.Size = new System.Drawing.Size(125, 26);
+            this.txtTiempo.TabIndex = 23;
+            this.txtTiempo.Text = "1000";
             // 
-            // label11
+            // lblTiempo
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(463, 133);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 20);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Tiempo:";
+            this.lblTiempo.AutoSize = true;
+            this.lblTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempo.Location = new System.Drawing.Point(463, 133);
+            this.lblTiempo.Name = "lblTiempo";
+            this.lblTiempo.Size = new System.Drawing.Size(72, 20);
+            this.lblTiempo.TabIndex = 22;
+            this.lblTiempo.Text = "Tiempo:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 521);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtTiempo);
+            this.Controls.Add(this.lblTiempo);
             this.Controls.Add(this.txtCantidadClientes);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblClientes);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.combo);
             this.Controls.Add(this.txtHasta);
@@ -347,9 +348,9 @@
         private System.Windows.Forms.ComboBox combo;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtCantidadClientes;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblClientes;
+        private System.Windows.Forms.TextBox txtTiempo;
+        private System.Windows.Forms.Label lblTiempo;
     }
 }
 

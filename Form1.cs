@@ -23,9 +23,8 @@ namespace Boleteria_Final
         private double media2;
         private double desviacion1;
         private double desviacion2;
-
-
-
+        private string[] VALORES = { "Tiempo", "Clientes" };
+        private Boolean simulacionClientes;
         public Form1()
         {
             InitializeComponent();
@@ -33,9 +32,9 @@ namespace Boleteria_Final
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            combo.DataSource = VALORES; 
         }
-        
+    
         private void tomarDatos()
         {
             desde = double.Parse(txtDesde.Text);
@@ -46,6 +45,11 @@ namespace Boleteria_Final
             media2 = double.Parse(txtMedia2.Text);
             desviacion1 = double.Parse(txtDesviacion1.Text);
             desviacion2 = double.Parse(txtDesviacion2.Text);
+            tiempo = double.Parse(txtTiempo.Text);
+            cantidadClientes = double.Parse(txtCantidadClientes.Text);
+            simulacionClientes = true;
+            
+            if (combo.SelectedItem.Equals("Tiempo")) { simulacionClientes = false; }
         }
 
         private void btnSimular_Click(object sender, EventArgs e)
@@ -57,6 +61,7 @@ namespace Boleteria_Final
             }
             else
             {
+  
                 gestorColas = new GestorColas(this);
                 gestorColas.simular(desde,hasta,limInferior,limSuperior,media1,media2,desviacion1,desviacion2);
             }
@@ -66,8 +71,9 @@ namespace Boleteria_Final
         {
             if (desde >= hasta || desde < 0 || hasta < 0 ||
                 limInferior >= limSuperior || limInferior < 0 || limSuperior < 0 ||
-                media1 < 0 || desviacion1 < 0 || media2 < 0 || desviacion2 < 0) { return true; }
-
+                media1 < 0 || desviacion1 < 0 || media2 < 0 || desviacion2 < 0 || 
+                tiempo < 0 || cantidadClientes < 0) 
+            { return true; }
             return false;
         }
 
@@ -75,6 +81,22 @@ namespace Boleteria_Final
         {
             grdResultados.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grdResultados.DataSource = resultados;
+        }
+
+        private void combo_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (combo.SelectedItem.Equals("Tiempo"))
+            {
+                txtCantidadClientes.Visible = false;
+                txtTiempo.Visible = true;
+                lblClientes.Visible = false;
+                lblTiempo.Visible = true;
+                return;
+            }
+            txtCantidadClientes.Visible = true;
+            txtTiempo.Visible = false;
+            lblClientes.Visible = true;
+            lblTiempo.Visible = false;
         }
     }
 }

@@ -60,7 +60,7 @@ namespace Boleteria_Final
         {
             cola.Enqueue(cliente);
         }
-        public void obtenerClienteActual(){
+        public Cliente obtenerClienteActual(){
             return this.clienteActual;
         }
     }

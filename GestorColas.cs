@@ -50,7 +50,7 @@ namespace Boleteria_Final
 
             while (true)
             {
-                lineaActual = new Linea(lineaAnterior, this, desde, hasta);
+                lineaActual = new Linea(lineaAnterior, this, desde, hasta,iteracion);
                 lineaActual.calcularEvento();
                 lineaActual.calcularSiguienteLlegada(limInferior,limSuperior);
                 lineaActual.calcularFinAtencion(media1,desviacion1,media2,desviacion2);
@@ -63,6 +63,7 @@ namespace Boleteria_Final
                 {
                     agregarLinea(lineaActual, iteracion);
                 }
+                iteracion++;
             }
             pantalla.mostrarResultados(resultados);
         }
