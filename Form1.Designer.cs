@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSimular = new System.Windows.Forms.Button();
@@ -184,7 +186,23 @@
             this.grdResultados.AllowUserToAddRows = false;
             this.grdResultados.AllowUserToDeleteRows = false;
             this.grdResultados.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdResultados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grdResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdResultados.DefaultCellStyle = dataGridViewCellStyle4;
             this.grdResultados.Location = new System.Drawing.Point(16, 185);
             this.grdResultados.Name = "grdResultados";
             this.grdResultados.ReadOnly = true;
@@ -280,11 +298,11 @@
             // 
             this.lblTiempo.AutoSize = true;
             this.lblTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempo.Location = new System.Drawing.Point(463, 133);
+            this.lblTiempo.Location = new System.Drawing.Point(450, 133);
             this.lblTiempo.Name = "lblTiempo";
-            this.lblTiempo.Size = new System.Drawing.Size(72, 20);
+            this.lblTiempo.Size = new System.Drawing.Size(96, 20);
             this.lblTiempo.TabIndex = 22;
-            this.lblTiempo.Text = "Tiempo:";
+            this.lblTiempo.Text = "Tiempo(S):";
             // 
             // Form1
             // 

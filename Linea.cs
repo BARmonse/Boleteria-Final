@@ -31,11 +31,13 @@ namespace Boleteria_Final
         public Servidor boleteria { get; set; }
         public double colaMaxima { get; set; }
         public double rndAtencionRapida { get; set; }
+        public double clientesIngresados { get; set; }
+
         public List<Cliente> clientes;
         public ConcurrentQueue<Cliente> clientesLibres;
         public double clientesAtendidos;
 
-        public Linea()
+        public Linea(double limInferior, double limSuperior)
         {
             this.siguienteLlegada = 0;
             this.aleatorios = new GeneradorLenguaje();
@@ -47,6 +49,8 @@ namespace Boleteria_Final
             this.clientesAtendidos = 0;
             this.evento = "Inicialización";
             this.tiempoPromedioSistema = 0;
+            this.siguienteLlegada = limInferior + (limSuperior - limInferior) * aleatorios.siguienteAleatorio();
+            this.tiempoLlegada = this.siguienteLlegada;
         }
 
         public Linea(Linea lineaAnterior, GestorColas colas, double desde, double hasta, double idFila)
@@ -67,12 +71,6 @@ namespace Boleteria_Final
             this.rndAtencionRapida = -1;
             this.clientesAtendidos = lineaAnterior.clientesAtendidos;
         }
-
-        public Servidor obtenerBoleteria()
-        {
-            return (Servidor) this.boleteria.Clone();
-        }
-
         private Cliente buscarClienteLibre()
         {
             Cliente libre;
@@ -86,7 +84,7 @@ namespace Boleteria_Final
             this.clientes.Add(res);
             if (idFila <= hasta)
             {
-                //colas.agregarColumna();
+                colas.agregarColumna();
             }
 
             return res;
@@ -145,6 +143,7 @@ namespace Boleteria_Final
                 clientesAtendidos++;
                 Cliente clienteRecienAtendido = boleteria.obtenerClienteActual();
                 clientesLibres.Enqueue(clienteRecienAtendido);
+                clienteRecienAtendido.limpiar();
 
                 if (lineaAnterior.boleteria.tieneCola())
                 {
