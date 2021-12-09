@@ -40,7 +40,7 @@ namespace Boleteria_Final
             tabla.Columns.Add("Fin de atención");//Linea 10
             tabla.Columns.Add("Máxima cola");//Linea 11
             tabla.Columns.Add("Clientes atendidos");//Linea 12
-            tabla.Columns.Add("Tiempo promedio de atención");//Linea 13
+            //tabla.Columns.Add("Tiempo promedio de atención");//Linea 13
 
             truncador = new Truncador(2);
         }
@@ -62,7 +62,7 @@ namespace Boleteria_Final
                 lineaActual.calcularFinAtencion(media1,desviacion1,media2,desviacion2);
                 lineaActual.calcularColaMaxima();
                 lineaActual.hayAtencionRapida();
-                lineaActual.calcularTiempoPromedioSistema();
+                //lineaActual.calcularTiempoPromedioSistema();
 
                 lineaAnterior = lineaActual;
 
@@ -103,14 +103,14 @@ namespace Boleteria_Final
             row[10] = linea.boleteria.finAtencion.ToString() != "-1" ? truncador.truncar(linea.boleteria.finAtencion).ToString() : "";
             row[11] = linea.colaMaxima;
             row[12] = linea.clientesAtendidos;
-            row[13] = truncador.truncar(linea.tiempoPromedioSistema);
+            //row[13] = truncador.truncar(linea.tiempoPromedioSistema);
 
-            indice = 13;
-            for (int j = 0; j < cantidadClientes; j++)
-            {
-                indice += 1;
-                row[indice] = linea.clientes[j].estado;
-            }
+            indice = 12;
+            //for (int j = 0; j < cantidadClientes; j++)
+            //{
+            //    indice += 1;
+            //    row[indice] = linea.clientes[j].estado;
+            //}
 
             resultados.Rows.Add(row);
         }

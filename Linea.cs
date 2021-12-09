@@ -84,7 +84,7 @@ namespace Boleteria_Final
             this.clientes.Add(res);
             if (idFila <= hasta)
             {
-                colas.agregarColumna();
+                //colas.agregarColumna();
             }
 
             return res;
